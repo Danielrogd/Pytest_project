@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    CART_BTN = (By.XPATH, "//a[@class='btn btn-default']")
     # LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
 
 
@@ -23,3 +24,8 @@ class ProductPageLocators():
     ITEM_PRICE = (By.XPATH, "//p[@class='price_color']")
     ITEM_PRICE_IN_CART = (By.XPATH, "(//div[@class='alertinner ']//strong)[3]")
     # (//div[@class='alertinner ']//strong)[2] - qualifies for the Deferred benefit offer offer
+
+
+class CartPageLocators():
+    CART_STATUS_TEXT = (By.XPATH, "//div[@id='content_inner']//p")
+    CART_STATUS_ACTIVE = (By.XPATH, "//div[@id='content_inner']//h2[@class='col-sm-6 h3']")
