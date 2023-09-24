@@ -1,6 +1,6 @@
 from .pages.login_page import LoginPage
 from .pages.product_page import ProductPage
-from .pages.Cart_page import CartPage
+from .pages.Basket_page import BasketPage
 import pytest
 import time
 import random
@@ -10,8 +10,8 @@ import random
 #     link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209"
 #     page = ProductPage(browser, link)
 #     page.open()
-#     page.should_be_btn_to_cart()
-#     page.add_item_to_cart()
+#     page.should_be_btn_to_basket()
+#     page.add_item_to_basket()
 #     page.should_not_be_success_message()
 #
 # @pytest.mark.xfail(reason="fail")
@@ -19,8 +19,8 @@ import random
 #     link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209"
 #     page = ProductPage(browser, link)
 #     page.open()
-#     page.should_be_btn_to_cart()
-#     page.add_item_to_cart()
+#     page.should_be_btn_to_basket()
+#     page.add_item_to_basket()
 #     page.should_not_be_disappeared()
 
 
@@ -41,11 +41,11 @@ import random
 # def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
 #     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
 #     page = ProductPage(browser, link)
-#     page_cart = CartPage(browser, link)
+#     page_basket = BasketPage(browser, link)
 #     page.open()
-#     page_cart.go_to_cart_page()
-#     page_cart.should_not_be_active_cart()
-#     page_cart.should_be_empty_cart_message()
+#     page_basket.go_to_basket_page()
+#     page_basket.should_not_be_active_basket()
+#     page_basket.should_be_empty_basket_message()
 
 
 class TestUserAddToBasketFromProductPage():
@@ -71,14 +71,14 @@ class TestUserAddToBasketFromProductPage():
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1"
         page = ProductPage(browser, link)
         page.open()
-        page.should_be_btn_to_cart()
-        page.add_item_to_cart()
+        page.should_be_btn_to_basket()
+        page.add_item_to_basket()
         page.should_be_alert()
         page.solve_math()
         time.sleep(2)
         page.should_be_item_name_in_item_page()
         page.should_be_item_price_in_item_page()
-        page.should_be_item_name_in_cart_message()
-        page.should_be_item_price_in_cart_message()
-        page.should_be_equal_name_in_cart_and_in_item_page()
-        page.should_be_equal_price_in_cart_and_in_item_page()
+        page.should_be_item_name_in_basket_message()
+        page.should_be_item_price_in_basket_message()
+        page.should_be_equal_name_in_basket_and_in_item_page()
+        page.should_be_equal_price_in_basket_and_in_item_page()

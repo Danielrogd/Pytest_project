@@ -1,6 +1,6 @@
 from .pages.main_page import MainPage
 from .pages.login_page import LoginPage
-from .pages.Cart_page import CartPage
+from .pages.Basket_page import BasketPage
 import pytest
 
 
@@ -18,8 +18,8 @@ class TestLoginFromMainPage():
     def test_guest_cant_see_product_in_basket_opened_from_main_page(self, browser):
         link = "http://selenium1py.pythonanywhere.com/"
         page = MainPage(browser, link)
-        page_cart = CartPage(browser, link)
+        page_basket = BasketPage(browser, link)
         page.open()
-        page_cart.go_to_cart_page()
-        page_cart.should_not_be_active_cart()
-        page_cart.should_be_empty_cart_message()
+        page_basket.go_to_basket_page()
+        page_basket.should_not_be_active_basket()
+        page_basket.should_be_empty_basket_message()
