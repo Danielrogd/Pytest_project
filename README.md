@@ -1,2 +1,20 @@
-This is a repository for storing homework for the test automation course on the Stepik platform.
-Starting from lesson 4.1.6
+Final project of the course at Stepik platform: [Автоматизация тестирования с помощью Selenium и Python](https://stepik.org/course/575/syllabus)
+
+Autotests implemented in frame of the project (using Training site) are based on Page Object pattern.
+
+### Requirements
+```
+pytest==7.1.2
+selenium==4.12.0
+```
+### Start:
+```
+git clone https://github.com/Danielrogd/Pytest_project.git
+cd Pytest_project
+pip install -r requirements.txt 
+```
+### Run the tests:
+```
+Command to run tests for review:
+pytest -v --tb=line --language=en -m need_review
+```
